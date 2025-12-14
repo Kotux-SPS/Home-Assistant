@@ -1,10 +1,19 @@
 <h1> Home-Assistant </h1>
-<p>Tento kód slouží k měření teploty pomocí digitálního teplotního senzoru Dallas DS18B20. ESP32 čte teplotu a následně ji přes Wi-Fi odesílá pomocí MQTT protokolu do Home Asistantu. 
- Soupis použitých komponent</p>
-<a href="https://www.laskakit.cz/esp32-c3-super-mini-wifi-bluetooth-modul/">ESP32 super mini c3</a></li>  
-<a href="https://dratek.cz/arduino-platforma/1187-teplotni-senzor-digitalni-dallas-ds18b20.html">Dallas DS18B20 Teplotní čidlo</a></li>  
-<a href="https://kitsguru.com/products/4-7k-resistance-1-4-watt-5-tolerance?variant=46112897171708&country=AE&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic">Rezistor 4,7kΩ</a></li>  
-<a href="https://dratek.cz/arduino-platforma/1074-mq2-mq-2-senzor-horlavych-plynu-propanu-metanu-butanu-vodiku.html">MQ-2 senzor hořlavých plynů</a></li> (Čip: LM393,Sensor: ZYMQ)  
+<p>Tento kód slouží k měření teploty pomocí digitálního teplotního senzoru Dallas DS18B20. ESP32 čte teplotu a následně
+  ji přes Wi-Fi odesílá pomocí MQTT protokolu do Home Asistantu.
+  Soupis použitých komponent</p>
+<li><a href="https://www.laskakit.cz/esp32-c3-super-mini-wifi-bluetooth-modul/">ESP32 super mini c3</a></li>
+<li><a href="https://dratek.cz/arduino-platforma/1187-teplotni-senzor-digitalni-dallas-ds18b20.html">Dallas DS18B20
+    Teplotní čidlo</a></li>
+<li><a
+    href="https://kitsguru.com/products/4-7k-resistance-1-4-watt-5-tolerance?variant=46112897171708&country=AE&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic">Rezistor
+    4,7kΩ</a></li>
+<li><a
+    href="https://dratek.cz/arduino-platforma/1074-mq2-mq-2-senzor-horlavych-plynu-propanu-metanu-butanu-vodiku.html">MQ-2
+    senzor hořlavých plynů</a> (Čip: LM393,Sensor: ZYMQ) </li>
+<li><a
+    href="https://dratek.cz/arduino-platforma/1074-mq2-mq-2-senzor-horlavych-plynu-propanu-metanu-butanu-vodiku.html">VirtualBoxu
+    + Home Assistant</a> </li>
 
 <section>
   <h2>Instalace Home Assistant na VirtualBoxu</h2>
@@ -18,15 +27,45 @@
   </p>
   <p>
     Zdroj:
-    <a href="https://www.home-assistant.io/installation/windows/" target="_blank">
-      instalační návod Home Assistant na Windows
-    </a>
+   <li> <a href="https://www.home-assistant.io/installation/windows/" target="_blank"> 
+      instalační návod Home Assistant na Windows 
+    </a> </li>
   </p>
 </section>
 
+<section>
+  
+   <h2> Konfigurace MQTT v Home Assistantu </h2>
+ 
+  <p>
+    Pro komunikaci mezi ESP32 a Home Assistantem jsem využil protokol MQTT. V Home Assistantu jsem nainstaloval doplněk
+    "Mosquitto broker", který slouží jako MQTT broker pro přijímání a odesílání zpráv.
+  </p>
+</section>
 
+<section>
 
-<h2>Home Assistant-Virtual Machine</h2> 
+  <h4>Funkce Home Assitentu a ESP32</h4>
 
+ <p>
+  K ESP32 je připojeno teplotní čidlo <strong>Dallas DS18B20</strong> a senzor
+  koncentrace plynu (CO₂). Teplotní čidlo je v Home Assistantu přidáno jako
+  samostatná entita. Hodnoty ze senzoru CO₂ jsou odesílány z ESP32 do
+  Home Assistantu pomocí MQTT protokolu.
+</p>
 
-<h3>Teplotní čídlo - Dallas DS18B20</h3>
+<p>
+  Data ze senzorů nejsou odesílána nepřetržitě, ale pouze v pravidelných
+  časových intervalech. Tento přístup snižuje zatížení sítě a především
+  spotřebu energie zařízení, což je důležité zejména u IoT systémů.
+</p>
+
+<p>
+  Home Assistant umožňuje snadnou komunikaci s různými zařízeními a senzory
+  pomocí MQTT protokolu. Po připojení ESP32 k Wi-Fi síti a odeslání dat
+  do MQTT brokeru jsou senzory automaticky detekovány a je možné je
+  monitorovat a vizualizovat v uživatelském rozhraní.
+</p> 
+ 
+
+</section>
