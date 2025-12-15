@@ -70,4 +70,4 @@
 
 </section>
 
-#Přidat další sekci ohledně Zobrazení dat a dopsat funkce typu : Upozornění při překročení teploty,Historie měření a nějaký obrázky
+#Přidat další sekci ohledně Zobrazení dat a dopsat funkce typu : Upozornění při překročení teploty,Historie měření a nějaký obrázky :D
