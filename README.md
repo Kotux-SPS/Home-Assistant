@@ -45,13 +45,13 @@
 
 <section>
 
-  <h4>Funkce Home Assitentu a ESP32</h4>
+  <h2>Funkce Home Assitentu a ESP32</h2>
 
  <p>
-  K ESP32 je připojeno teplotní čidlo <strong>Dallas DS18B20</strong> a senzor
+  K ESP32 je připojen senzor
   koncentrace plynu (CO₂). Teplotní čidlo je v Home Assistantu přidáno jako
   samostatná entita. Hodnoty ze senzoru CO₂ jsou odesílány z ESP32 do
-  Home Assistantu pomocí MQTT protokolu.
+  Home Assistantu pomocí home-assistant API.
 </p>
 
 <p>
@@ -61,12 +61,26 @@
 </p>
 
 <p>
+    Teplotní čidlo komunikuje pomocí MQTT pomocí kódu , který jsme my napsaly. Ten posílá komunikační payload do brokeru s topicem
+  <br>  <img src="Home-Assistent/Obrázky/kod-payload.png" alt="vizualizovat" width="400"> </br>
+</p>
+
+<p>
   Home Assistant umožňuje snadnou komunikaci s různými zařízeními a senzory
   pomocí MQTT protokolu. Po připojení ESP32 k Wi-Fi síti a odeslání dat
   do MQTT brokeru jsou senzory automaticky detekovány a je možné je
   monitorovat a vizualizovat v uživatelském rozhraní.
 </p> 
  
+
+</section>
+
+<section>
+<h3>Dashboard</h3>
+<p>
+   Nastavení Dashboard je velice jednoduché a jde lehce nastavit pomocí návodu od oficiálních zdrojů <a href="https://www.home-assistant.io/dashboards/dashboards/#creating-a-new-dashboard" target="_blank">oficiálních zdrojů </a>
+
+</p>
 
 </section>
 
