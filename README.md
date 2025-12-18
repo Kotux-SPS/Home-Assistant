@@ -154,5 +154,13 @@
       </p>
   
 </section>
+<section>
+  <h2>co nám ještě chybí</h2>
+  <p>
+    <li>dodělat krabičku</li>
+    <li>napájet komponenty k sobě a dodat baterii</li>
+    <li>dodělat sleep mód kvůli spotřebě baterie</li>
+  </p>
+</section>
 
 #Přidat další sekci ohledně Zobrazení dat a dopsat funkce typu : Upozornění při překročení teploty,Historie měření a nějaký obrázky :D
