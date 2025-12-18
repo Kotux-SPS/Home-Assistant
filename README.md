@@ -116,10 +116,11 @@
         <h4><strong>s esphome</strong></h4>
           <p>
             u esphome se dá sledovat analogová hodnota na pinu a nastavit automatizaci tak že při změne hodnoty nad nějaké procento, tak zahlásí alarm a pošle zprávu do aplikace
+            <img src="Home-Assistent/Obrázky/gas-alarm.png" href="">
           </p>
         <h4><strong>náš kód</strong></h4>
           <p>
-            v našem kódu je podmínka pro tuto situaci a zase pošle MQTT zprávu s topicem dallas18b20/alarm/temp a s obsahem "1"
+            v našem kódu je podmínka pro tuto situaci a zase pošle MQTT zprávu s topicem dallas18b20/alarm/temp a s obsahem "1"(automatizace vypadá stejně jako u tamperu).
           </p>
       </li>
         
