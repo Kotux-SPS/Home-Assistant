@@ -71,7 +71,7 @@
 </p>
 <h3>IOT bezpečnost </h3>
 <p>
-  ohledně bezpečnosti jsme to vyřešily tak že do každého sensoru nainstalujeme tzv: "tamper switch" který se sepne po otevření krytu a nahlásí to do aplikace. Data jsou ochráněna tak že senzory sdílejí jednu osobu v homeassistantu která nemá admin prává, může mít přistup jen a pouze v lokální síti a přihlašovací údaje mají uložena v secret file. Samotný broker může být kontaktován pouze z homeassistantu nebo jinou aplikací s účtem homeassistantu. tímto opatřením jsme zamezily zneužití a manipulace se systémem komukoliv bez oprávnění.
+  ohledně bezpečnosti jsme to vyřešily tak že do každého sensoru nainstalujeme tzv: "tamper switch" který se sepne po otevření krytu a nahlásí to do aplikace. Data jsou ochráněna tak že senzory sdílejí jednu osobu v homeassistantu která nemá admin prává, může mít přistup jen a pouze v lokální síti. Samotný broker může být kontaktován pouze z homeassistantu nebo jinou aplikací s účtem homeassistantu. tímto opatřením jsme zamezily zneužití a manipulace se systémem komukoliv bez oprávnění.
 </p>
 
 <p>
