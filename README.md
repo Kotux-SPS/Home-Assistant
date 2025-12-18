@@ -57,7 +57,7 @@
             
     
   </p>
-</section>
+</section>\
 
 <section>
 
@@ -106,7 +106,7 @@
           </p>
         <h5><strong>s naším kódem</strong></h5>
           <p>
-            náš kód má v sobě podmínku, když je na pinu .... logická nula tak pošle MQTT zprávu s topicem ...... s obsahem "1" , tento topic poslouchá homeassistant a když se ukáže alarmová zpráva tak zahlásí alarm a pošle zprávu do aplikace.
+            náš kód má v sobě podmínku, když je na pinu logická nula tak pošle MQTT zprávu s topicem dallas18b20/alarm/tamper s obsahem "1" , tento topic poslouchá homeassistant a když se ukáže alarmová zpráva tak zahlásí alarm a pošle zprávu do aplikace.
             <img src="" href="">
           </p>
       </li>
@@ -115,8 +115,11 @@
         <p>jedná se o alarm kvůli nadměrným hodnotám (nebezpečí požáru nebo vetší komulace plynů)</p>
         <h4><strong>s esphome</strong></h4>
           <p>
-            u esphome se dá sledovat analogová hodnota na pinu a nastavit automatizaci tak že při změne hodnoty 
-            
+            u esphome se dá sledovat analogová hodnota na pinu a nastavit automatizaci tak že při změne hodnoty nad nějaké procento, tak zahlásí alarm a pošle zprávu do aplikace
+          </p>
+        <h4><strong>náš kód</strong></h4>
+          <p>
+            v našem kódu je podmínka pro tuto situaci a zase pošle MQTT zprávu s topicem dallas18b20/alarm/temp a s obsahem "1"
           </p>
       </li>
         
@@ -131,6 +134,24 @@
 
 </p>
 
+</section>
+<section>
+  <h2>porovnání</h2>
+    <p>budeme brát v potaz obtížnost jazyka, komunikace , vyčítaní hodnot a budoucí úpravy </p>
+    <h3><strong>ESPHOME</strong></h3>
+      <p>
+        <li>používá Yaml - težsí na pochopení kvůli neobvyklé syntaxy</li>
+        <li>pro update používá OTA(over the air) - updaty kódu přes vzduch</li>
+        <li>lehčí pro začátek díky automatickému navázání komunikace s homeassistantem</li>
+        <li>add-on přímo v homeassistantovy</li>
+      </p>
+    <h3><strong>NAŠE</strong></h3>
+      <p>
+        <li>víme co to přesně dělá a kam posílá</li>
+        <li>lehčí programovací jazyk</li>
+        <li>práce s knihovnama</li>
+      </p>
+  
 </section>
 
 #Přidat další sekci ohledně Zobrazení dat a dopsat funkce typu : Upozornění při překročení teploty,Historie měření a nějaký obrázky :D
