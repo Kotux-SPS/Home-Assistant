@@ -102,12 +102,12 @@
         <h5><strong>s esphome</strong></h5>
           <p>
             s esphome jde udělat přepínáč, který sleduje napětové úrovně na pinu ESP32 C3, a pokud se změní nahlásí to a homeassistant pošle zprávu do aplikace
-            <img src="" href="">
+            <img src="Home-Assistent/Obrázky/gas-tamper.png" href="">
           </p>
         <h5><strong>s naším kódem</strong></h5>
           <p>
             náš kód má v sobě podmínku, když je na pinu logická nula tak pošle MQTT zprávu s topicem dallas18b20/alarm/tamper s obsahem "1" , tento topic poslouchá homeassistant a když se ukáže alarmová zpráva tak zahlásí alarm a pošle zprávu do aplikace.
-            <img src="" href="">
+            <img src="Home-Assistent/Obrázky/temp-tamper.png" href="">
           </p>
       </li>
       <li>
