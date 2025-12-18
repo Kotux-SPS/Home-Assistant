@@ -42,6 +42,22 @@
     "Mosquitto broker", který slouží jako MQTT broker pro přijímání a odesílání zpráv.
   </p>
 </section>
+<section>
+  <h3>Proč zrovna MQTT?</h3>
+  <p>
+  jedná se o lightweight přenosový protokol, který posílá informace do tzv:"brokera". 
+  Zpráva obsahuje topic (např: Teplota/kuchyň) díky tomuhle se dá velice dobře organizovat záznamy a zařizení které tyto data potřebují si pošlou žádost o zpravu s daným topicem a broker pošle zprávu zpátky  
+    <br>  <img src="https://www.neovasolutions.com/wp-content/uploads/2021/05/Untitled-design-22.png" href="">
+    <ul><strong>Výhody:</strong><li>nezatěžuje síť</li>
+            <li>jednoduchý na nastasvení</li>
+            <li>skvělě funguje s Homeassistantem (officiální add-on)</li>
+            <li>skvělý na další rozšiřitelnost</li>
+    </ul>
+            
+            
+    
+  </p>
+</section>
 
 <section>
 
@@ -53,16 +69,20 @@
   samostatná entita. Hodnoty ze senzoru CO₂ jsou odesílány z ESP32 do
   Home Assistantu pomocí home-assistant API.
 </p>
-
+<h3>IOT bezpečnost </h3>
 <p>
-  Data ze senzorů nejsou odesílána nepřetržitě, ale pouze v pravidelných
-  časových intervalech. Tento přístup snižuje zatížení sítě a především
-  spotřebu energie zařízení, což je důležité zejména u IoT systémů.
+  ohledně bezpečnosti jsme to vyřešily tak že do každého sensoru nainstalujeme tzv: "tamper switch" který se sepne po otevření krytu a nahlásí to do aplikace. Data jsou ochráněna tak že senzory sdílejí jednu osobu v homeassistantu která nemá admin prává, může mít přistup jen a pouze v lokální síti a přihlašovací údaje mají uložena v secret file. Samotný broker může být kontaktován pouze z homeassistantu nebo jinou aplikací s účtem homeassistantu. tímto opatřením jsme zamezily zneužití a manipulace se systémem komukoliv bez oprávnění.
 </p>
 
 <p>
-    Teplotní čidlo komunikuje pomocí MQTT pomocí kódu , který jsme my napsaly. Ten posílá komunikační payload do brokeru s topicem
+  Data ze senzorů nejsou odesílána nepřetržitě, ale pouze v pravidelných
+  časových intervalech. Tento přístup snižuje spotřebu energie zařízení, což je důležité zejména u IoT systémů.
+</p>
+
+<p>
+    Teplotní čidlo komunikuje pomocí MQTT pomocí kódu , který jsme my napsaly. Ten posílá konfigurační payload do brokeru s topicem
   <br>  <img src="Home-Assistent/Obrázky/kod-payload.png" alt="vizualizovat" width="400"> </br>
+  a nasledně co naváže komunikaci tak posílá naměřená data
 </p>
 
 <p>
@@ -70,9 +90,38 @@
   pomocí MQTT protokolu. Po připojení ESP32 k Wi-Fi síti a odeslání dat
   do MQTT brokeru jsou senzory automaticky detekovány a je možné je
   monitorovat a vizualizovat v uživatelském rozhraní.
-</p> 
- 
 
+</p>
+</section>
+<section>
+  <h3>Automatizace</h3>
+  <p>
+    homeassistant má funkci automatizace, které jsme využily k alarmovým stavům 
+    <ul>
+      <li> <h4>tamper automatizace</h4>
+        <h5><strong>s esphome</strong></h5>
+          <p>
+            s esphome jde udělat přepínáč, který sleduje napětové úrovně na pinu ESP32 C3, a pokud se změní nahlásí to a homeassistant pošle zprávu do aplikace
+            <img src="" href="">
+          </p>
+        <h5><strong>s naším kódem</strong></h5>
+          <p>
+            náš kód má v sobě podmínku, když je na pinu .... logická nula tak pošle MQTT zprávu s topicem ...... s obsahem "1" , tento topic poslouchá homeassistant a když se ukáže alarmová zpráva tak zahlásí alarm a pošle zprávu do aplikace.
+            <img src="" href="">
+          </p>
+      </li>
+      <li>
+        <h4>alarm automatizace</h4>
+        <p>jedná se o alarm kvůli nadměrným hodnotám (nebezpečí požáru nebo vetší komulace plynů)</p>
+        <h4><strong>s esphome</strong></h4>
+          <p>
+            u esphome se dá sledovat analogová hodnota na pinu a nastavit automatizaci tak že při změne hodnoty 
+            
+          </p>
+      </li>
+        
+   </ul>
+  </p>
 </section>
 
 <section>
