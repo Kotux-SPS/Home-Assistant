@@ -1,6 +1,6 @@
 esphome:
-  name: esp32c3-gas-detector
-  friendly_name: ESP32C3_gas_detector
+  name: 
+  friendly_name: 
 
 esp32:
   board: esp32-c3-devkitm-1
@@ -13,11 +13,11 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "NlRPJEunDLaqcSd0yr80B1hEF4O3NEgdTwOzBleeKDc="
+    key: ""
 
 ota:
   - platform: esphome
-    password: "b929aca52e26d872efb288948e6ec3e6"
+    password: ""
 
 wifi:
   ssid: !secret wifi_ssid
@@ -25,8 +25,8 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Esp32C3-Gas-Detector"
-    password: "tbDoUgCRKCFy"
+    ssid: ""
+    password: ""
 
 captive_portal:
 
@@ -42,16 +42,16 @@ sensor:
 binary_sensor:
   - platform: gpio
     pin:
-      number: GPIO4                 # ← connect one side of switch to GPIO4
+      number: GPIO4                 
       mode: INPUT_PULLUP
       inverted: true
     id: tamper_sensor
     name: "Tamper Switch"
     device_class: tamper
-    on_press:                       # ← when switch opens → tamper
+    on_press:                       
       - switch.turn_on: tamper_output
       - logger.log: "TAMPER DETECTED → GPIO7 HIGH"
-    on_release:                     # ← when switch closes → safe
+    on_release:                     
       - switch.turn_off: tamper_output
       - logger.log: "Tamper closed → GPIO7 LOW"
 
