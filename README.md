@@ -146,7 +146,7 @@
         <li>lehčí pro začátek díky automatickému navázání komunikace s homeassistantem</li>
         <li>add-on přímo v homeassistantovy</li>
       </p>
-    <h3><strong>NAŠE</strong></h3>
+    <h3><strong>Náš Kód</strong></h3>
       <p>
         <li>víme co to přesně dělá a kam posílá</li>
         <li>lehčí programovací jazyk</li>
