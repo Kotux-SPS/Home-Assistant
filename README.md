@@ -131,7 +131,7 @@
 <section>
 <h3>Dashboard</h3>
 <p>
-   Nastavení Dashboard je velice jednoduché a jde lehce nastavit pomocí návodu od oficiálních zdrojů <a href="https://www.home-assistant.io/dashboards/dashboards/#creating-a-new-dashboard" target="_blank">oficiálních zdrojů </a>
+   Nastavení Dashboard je velice jednoduché a jde lehce nastavit pomocí návodu od oficiálních zdrojů [1].
 
 </p>
 
@@ -161,5 +161,19 @@
     <li>napájet komponenty k sobě a dodat baterii</li>
     <li>dodělat sleep mód kvůli spotřebě baterie</li>
   </p>
+</section>
+
+<section>
+<h3>Zdroje</h3>h3>
+<p>
+  [1] HOME ASSISTANT. Home Assistant [online]. [viděno 2025-01-20]. Dostupné z: https://www.home-assistant.io
+
+
+
+  
+</p>p
+
+
+  
 </section>
 
