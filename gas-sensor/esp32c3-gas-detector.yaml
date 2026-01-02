@@ -29,16 +29,18 @@ wifi:
     password: ""
 
 captive_portal:
-
+# our code
+#declaration of sensor
 sensor:
-  - platform: adc
-    pin: 0
-    name: "ESP32-C3-gas-sensor"
-    update_interval: 1s
+  - platform: adc 
+    pin: 0 # pin for sensor
+    name: "ESP32-C3-gas-sensor" #name of entity in HA
+    update_interval: 1s 
     filters:
-      - multiply: 100
+      - multiply: 100 #multiply the adc value to get %
     unit_of_measurement: "%"
     icon: "mdi:percent"
+#declaration for tamper
 binary_sensor:
   - platform: gpio
     pin:
@@ -48,12 +50,12 @@ binary_sensor:
     id: tamper_sensor
     name: "Tamper Switch"
     device_class: tamper
-    on_press:                       
+    on_press: # manipulation detected                      
       - switch.turn_on: tamper_output
-      - logger.log: "TAMPER DETECTED → GPIO7 HIGH"
+      - logger.log: "TAMPER DETECTED → GPIO7 HIGH" #alarm message
     on_release:                     
       - switch.turn_off: tamper_output
-      - logger.log: "Tamper closed → GPIO7 LOW"
+      - logger.log: "Tamper closed → GPIO7 LOW" 
 
 switch:
   - platform: gpio
