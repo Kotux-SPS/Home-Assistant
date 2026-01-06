@@ -172,10 +172,10 @@
 <section>
   <h3>Zdroje</h3>
   <p>
-    [1] HOME ASSISTANT. Home Assistant [online]. [viděno 2025-01-20]. Dostupné z: https://www.home-assistant.io
+    [1] HOME ASSISTANT. Home Assistant [online]. [viděno 2025-01-20]. Dostupné z: https://www.home-assistant.io  
     [2] DRÁTEK. *Arduino.cz - MQ2 (MQ-2) senzor hořlavých plynů (propan, metan, butan, vodík)* [online]. [viděno
     2025-01-20]. Dostupné z:
-    https://dratek.cz/arduino-platforma/1074-mq2-mq-2-senzor-horlavych-plynu-propanu-metanu-butanu-vodiku.html
+    https://dratek.cz/arduino-platforma/1074-mq2-mq-2-senzor-horlavych-plynu-propanu-metanu-butanu-vodiku.html  
     [3] KITSGURU. *4.7K Resistance 1/4 Watt 5% Tolerance* [online]. [viděno 2025-01-20]. Dostupné z:
     https://kitsguru.com/products/4-7k-resistance-1-4-watt-5-tolerance?variant=46112897171708&country=AE&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
 
