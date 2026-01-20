@@ -52,7 +52,7 @@
 
 
   </p>
-</section>\
+</section>
 
 <section>
 
